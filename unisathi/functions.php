@@ -15,7 +15,9 @@ function unisathi_enqueue_assets() {
 	$version = wp_get_theme()->get( 'Version' );
 	wp_enqueue_style( 'unisathi-fonts', 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap', array(), null );
 	wp_enqueue_style( 'unisathi-main', get_template_directory_uri() . '/assets/css/main.css', array(), $version );
+	wp_enqueue_style( 'unisathi-showcase', get_template_directory_uri() . '/assets/css/showcase.css', array( 'unisathi-main' ), $version );
 	wp_enqueue_script( 'unisathi-main', get_template_directory_uri() . '/assets/js/main.js', array(), $version, true );
+	wp_enqueue_script( 'unisathi-showcase', get_template_directory_uri() . '/assets/js/showcase.js', array(), $version, true );
 }
 add_action( 'wp_enqueue_scripts', 'unisathi_enqueue_assets' );
 
